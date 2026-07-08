@@ -10,6 +10,18 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in! And now find out!") }}
+
+                    <h1>Benutzerliste</h1>
+
+                    <ul>
+                        <!-- Schleife startet: Prüft automatisch, ob Daten vorhanden sind -->
+                        @foreach($users as $user)
+                            <li>
+                                <strong>{{ $user->name }}</strong>
+                                ({{ $user->email }})
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

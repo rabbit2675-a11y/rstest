@@ -8,6 +8,7 @@ class DashboardController extends Controller
 {
    public function index(): View
     {
-        return view('dashboard');
+        $users = \App\Models\User::all();
+        return view('dashboard', compact('users'));
     }
 }
