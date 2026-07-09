@@ -14,13 +14,14 @@
                     <h1>Benutzerliste</h1>
 
                     <ul>
-                        <!-- Schleife startet: Prüft automatisch, ob Daten vorhanden sind -->
-                        @foreach($users as $user)
+                        @forelse($users ?? [] as $user)
                             <li>
                                 <strong>{{ $user->name }}</strong>
                                 ({{ $user->email }})
                             </li>
-                        @endforeach
+                        @empty
+                            <li>Keine Benutzer gefunden.</li>
+                        @endforelse
                     </ul>
                 </div>
             </div>

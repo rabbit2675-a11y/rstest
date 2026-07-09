@@ -20,4 +20,14 @@ class DashboardTest extends TestCase
 
         $response->assertOk();
     }
+
+    public function test_dashboard_view_renders_without_users_variable(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->view('dashboard', []);
+
+        $response->assertSee('Benutzerliste');
+        $response->assertSee('Keine Benutzer gefunden.');
+    }
 }
