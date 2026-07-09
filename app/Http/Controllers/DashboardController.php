@@ -10,9 +10,8 @@ class DashboardController extends Controller
 {
     public function index(): View
     {
-        $users = User::all();
-
-        #return view('dashboard', compact('users'));
-        return view('dashboard');
+        $users = ARRAY();
+        $users = User::paginate(15);
+        return view('dashboard', compact('users'));
     }
 }
