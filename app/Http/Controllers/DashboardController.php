@@ -12,6 +12,7 @@ class DashboardController extends Controller
     {
         $users = User::all();
 
-        return view('dashboard', compact('users'));
+        #return view('dashboard', compact('users'));
+        return view('dashboard');
     }
 }
