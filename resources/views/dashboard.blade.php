@@ -9,20 +9,30 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in! And now find out!") }}
+         <h1>Benutzerliste</h1>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>E-Mail</th>
+                                <th>Erstellt am</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at->format('d.m.Y') }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
-                    <h1>Benutzerliste</h1>
-
-                    <ul>
-                        @forelse($users ?? [] as $user)
-                            <li>
-                                <strong>{{ $user->name }}</strong>
-                                ({{ $user->email }})
-                            </li>
-                        @empty
-                            <li>Keine Benutzer gefunden.</li>
-                        @endforelse
-                    </ul>
+                    <!-- Wenn Sie Paginate() im Controller verwendet haben: -->
+                    <!-- {{ $users->links() }} -->
                 </div>
             </div>
         </div>
