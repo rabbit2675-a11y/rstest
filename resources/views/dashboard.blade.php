@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
          <h1>Benutzerliste</h1>
-                    <table border="1">
+                    <table class=""table table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
