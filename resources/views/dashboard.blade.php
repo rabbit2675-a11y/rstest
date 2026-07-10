@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="mb-4 flex items-center justify-between">
-                        <h1 class="text-xl font-semibold text-gray-800">Benutzerliste</h1>
+                        <h1 class="text-xl font-semibold text-gray-800">Benutzerliste aktuell</h1>
                         <span class="text-sm text-gray-500">{{ $users->count() }} Benutzer</span>
                     </div>
 
